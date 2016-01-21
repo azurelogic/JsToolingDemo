@@ -1,0 +1,27 @@
+{
+  "name": "js-tooling-demo",
+  "version": "1.0.0",
+  "description": "it's a demo!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azurelogic/JsToolingDemo.git"
+  },
+  "author": "Rob Ribeiro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/azurelogic/JsToolingDemo/issues"
+  },
+  "homepage": "https://github.com/azurelogic/JsToolingDemo#readme",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "jquery": "^2.2.0",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
