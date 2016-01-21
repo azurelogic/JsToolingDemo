@@ -10,7 +10,7 @@
         @RenderBody()
         <div ng-controller="DemoController as vm">
             <div><button ng-click="vm.go()">Get name!</button></div>
-            <div><button ng-click="vm.stop = !vm.stop; vm.name = null;">Toggle Block!</button></div>
+            <div><button ng-click="vm.block()">Toggle Block!</button></div>
             <div>Blocked: {{!!vm.stop}}</div>
             <div>Name: {{vm.name}}</div>
         </div>
