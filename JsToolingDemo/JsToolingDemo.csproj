@@ -142,6 +142,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="gulpfile.js" />
     <Content Include="karma.conf.js" />
     <Content Include="package.json" />
     <Content Include="Scripts\angular-animate.js" />

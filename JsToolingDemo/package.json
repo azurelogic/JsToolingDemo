@@ -25,6 +25,10 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rimraf": "^0.2.0",
+    "gulp-sourcemaps": "^1.6.0",
     "karma": "^0.13.19",
     "karma-chai": "^0.1.0",
     "karma-cli": "^0.1.2",
