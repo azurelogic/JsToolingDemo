@@ -1,8 +1,10 @@
-﻿(function() {
+﻿(function () {
     angular.module('demo', [])
-        .controller('DemoController', DemoController);
+        .controller('DemoController', DemoController)
+    .factory('demoRepository', demoRepository);
 
-    function DemoController($http) {
+
+    function DemoController($http, demoRepository) {
         var vm = this;
 
         vm.go = go;
@@ -11,7 +13,7 @@
         function go() {
             vm.name = null;
             if (!vm.stop) {
-                return $http.get('https://api.github.com/users/azurelogic').then(function(res) {
+                return demoRepository.get().then(function (res) {
                     vm.name = res.data.name;
                 });
             }
@@ -22,4 +24,15 @@
             vm.name = null;
         }
     }
+
+    function demoRepository($http) {
+
+        return {
+            get: get
+        };
+
+        function get() {
+            return $http.get('https://api.github.com/users/azurelogic');
+        };
+    };
 })()

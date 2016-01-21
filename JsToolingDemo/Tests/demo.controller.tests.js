@@ -1,9 +1,10 @@
 ﻿describe('DemoController', function () {
     var DemoController, sandbox, $rootScope, $q;
-    var http = {};
+    var demoRepository;
     beforeEach(function () {
         sandbox = sinon.sandbox.create();
     });
+
 
     afterEach(function () {
         sandbox.restore();
@@ -12,8 +13,10 @@
     beforeEach(module('demo'));
 
     beforeEach(function () {
-        module(function($provide) {
-            $provide.value('$http', http);
+        demoRepository = {};
+
+        module(function ($provide) {
+            $provide.value('demoRepository', demoRepository);
         });
     });
 
@@ -39,21 +42,25 @@
             DemoController.block();
 
             DemoController.name.should.equal(null);
+            //should.equal(DemoController.name, null);
+
         });
     });
 
     describe('go', function () {
         it('when stop is falsey it calls $http.get', function (done) {
+            //broken...
+
             DemoController.stop = false;
             DemoController.name = null;
 
-            http.get = sandbox.stub();
+            demoRepository.get = sandbox.stub();
 
             var resultDeferred = $q.defer();
             resultDeferred.resolve({
                 data: {name: 'road runner'}
             });
-            http.get.returns({ result: resultDeferred.promise });
+            demoRepository.get.returns({ result: resultDeferred.promise });
 
             DemoController.go().then(function () {
                 DemoController.name.should.equal('road runner');
