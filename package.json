@@ -4,7 +4,8 @@
   "description": "it's a demo!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "preinstall": "npm install -g gulp",
+    "test": "echo \"Test command goes here!\""
   },
   "repository": {
     "type": "git",
