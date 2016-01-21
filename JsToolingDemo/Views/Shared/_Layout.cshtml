@@ -1,0 +1,21 @@
+﻿<!DOCTYPE html>
+<html ng-app="demo">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Demo site</title>
+</head>
+<body>
+    <div class="container">
+        @RenderBody()
+        <div ng-controller="DemoController as vm">
+            <div><button ng-click="vm.go()">Get name!</button></div>
+            <div><button ng-click="vm.stop = !vm.stop; vm.name = null;">Toggle Block!</button></div>
+            <div>Blocked: {{!!vm.stop}}</div>
+            <div>Name: {{vm.name}}</div>
+        </div>
+    </div>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Content/demo.controller.js"></script>
+</body>
+</html>
